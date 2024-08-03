@@ -3,7 +3,7 @@ import psycopg2
 import psycopg2.extras
 
 db_config = {
-    'dbname': 'nostalic_bedrooms',
+    'dbname': 'nostalgic_bedrooms',
     'user': 'postgres',
     'password': 'password',
     'host': 'localhost',
