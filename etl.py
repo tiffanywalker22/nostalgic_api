@@ -13,6 +13,23 @@ def connect_db(config):
     conn = psycopg2.connect(**config)
     return conn
 
+create_bedroom_table = """
+CREATE TABLE IF NOT EXISTS bedrooms (
+    bedroom_id INTEGER PRIMARY KEY,
+    title VARCHAR,
+    description TEXT,
+    img_src VARCHAR
+);
+"""
+
+def create_table():
+    conn = connect_db(db_config)
+    cursor = conn.cursor()
+    cursor.execute(create_bedroom_table)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
 def insert_bedroom(cursor, bedroom):
     insert_query = """
     INSERT INTO bedrooms (bedroom_id, title, description, img_src)
@@ -23,6 +40,8 @@ def insert_bedroom(cursor, bedroom):
 def process_csv(file_path, db_config):
     conn = connect_db(db_config)
     cursor = conn.cursor()
+
+    create_table()
     with open(file_path, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:

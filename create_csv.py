@@ -14,13 +14,13 @@ objects = [
     # Add more objects as needed
 ]
 
-# Data for bedroom-object associations
-bedrooms_objects = [
-    {'bedroom_id': 1, 'object_id': 1},
-    {'bedroom_id': 1, 'object_id': 2},
-    {'bedroom_id': 2, 'object_id': 2},
-    # Add more associations as needed
-]
+# # Data for bedroom-object associations
+# bedrooms_objects = [
+#     {'bedroom_id': 1, 'object_id': 1},
+#     {'bedroom_id': 1, 'object_id': 2},
+#     {'bedroom_id': 2, 'object_id': 2},
+#     # Add more associations as needed
+# ]
 
 # Function to write data to CSV
 def write_csv(file_path, fieldnames, data):
@@ -33,4 +33,4 @@ def write_csv(file_path, fieldnames, data):
 # Writing data to CSV files
 write_csv('bedrooms.csv', ['bedroom_id', 'title', 'description', 'img_src'], bedrooms)
 write_csv('objects.csv', ['object_id', 'name', 'description', 'img_src'], objects)
-write_csv('bedrooms_objects.csv', ['bedroom_id', 'object_id'], bedrooms_objects)
+# write_csv('bedrooms_objects.csv', ['bedroom_id', 'object_id'], bedrooms_objects)
