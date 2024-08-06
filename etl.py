@@ -1,5 +1,10 @@
 import psycopg2
 import csv
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger()
+
 
 db_config = {
     'dbname': 'nostalgic_bedrooms',
@@ -10,7 +15,9 @@ db_config = {
 }
 
 def connect_db(config):
+    logger.info('Connecting to the database...')
     conn = psycopg2.connect(**config)
+    logger.info('Connected to the database.')
     return conn
 
 create_bedroom_table = """
@@ -23,12 +30,14 @@ CREATE TABLE IF NOT EXISTS bedrooms (
 """
 
 def create_table():
+    logger.info('Creating table bedrooms...')
     conn = connect_db(db_config)
     cursor = conn.cursor()
     cursor.execute(create_bedroom_table)
     conn.commit()
     cursor.close()
     conn.close()
+    logger.info('Table bedrooms created.')
 
 def insert_bedroom(cursor, bedroom):
     insert_query = """
@@ -36,8 +45,10 @@ def insert_bedroom(cursor, bedroom):
     VALUES (%s, %s, %s, %s);
     """
     cursor.execute(insert_query, bedroom)
+    logger.info(f'Inserted bedroom: {bedroom}')
 
 def process_csv(file_path, db_config):
+    logger.info(f'Processing CSV file: {file_path}')
     conn = connect_db(db_config)
     cursor = conn.cursor()
 
@@ -55,6 +66,7 @@ def process_csv(file_path, db_config):
     conn.commit()
     cursor.close()
     conn.close()
+    logger.info('CSV file processed and data inserted into the database.')
 
 csv_file_path = 'bedrooms.csv'
 process_csv(csv_file_path, db_config)
