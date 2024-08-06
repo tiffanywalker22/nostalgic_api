@@ -39,6 +39,17 @@ def create_table():
     conn.close()
     logger.info('Table bedrooms created.')
 
+def delete_all_data():
+    logger.info('Deleting all data from bedrooms table...')
+    conn = connect_db(db_config)
+    cursor = conn.cursor()
+    delete_query = "DELETE FROM bedrooms;"
+    cursor.execute(delete_query)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    logger.info('All data deleted from bedrooms table.')
+
 def insert_bedroom(cursor, bedroom):
     insert_query = """
     INSERT INTO bedrooms (bedroom_id, title, description, img_src)
@@ -52,7 +63,7 @@ def process_csv(file_path, db_config):
     conn = connect_db(db_config)
     cursor = conn.cursor()
 
-    create_table()
+    delete_all_data()
     with open(file_path, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
@@ -69,4 +80,5 @@ def process_csv(file_path, db_config):
     logger.info('CSV file processed and data inserted into the database.')
 
 csv_file_path = 'bedrooms.csv'
+create_table()
 process_csv(csv_file_path, db_config)
