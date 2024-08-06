@@ -1,0 +1,25 @@
+API Documentation
+Base URL
+http://localhost:5000
+
+Endpoints
+Get All Bedrooms
+URL: /bedrooms
+Method: GET
+Description: Retrieves all bedroom records from the "bedrooms" table in the PostgreSQL database.
+Response:
+Status Code: 200 OK
+Body: A JSON array of objects, where each object represents a bedroom record.
+Error Handling
+500 Internal Server Error: Returned if there is an issue with the database connection or query execution.
+Implementation Details
+Database Configuration:
+dbname: nostalgic_bedrooms
+user: postgres
+password: password
+host: localhost
+port: 5432
+Logging: Configured to log INFO level messages to track the application's activities.
+Running the Application
+Start the Flask application with:
+python3 api.py
