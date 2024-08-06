@@ -15,3 +15,38 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+   etl
+   api
+
+ETL Script
+==========
+
+Overview
+--------
+
+Describe what the ETL script does.
+
+Functions
+---------
+
+- `connect_db()`: Description of what this function does.
+- `create_table()`: Description of what this function does.
+- `delete_all_data()`: Description of what this function does.
+- `insert_bedroom()`: Description of what this function does.
+- `process_csv()`: Description of what this function does.
+
+Flask API
+=========
+
+Overview
+--------
+
+Describe the Flask API and its purpose.
+
+Endpoints
+---------
+
+- `/bedrooms` (GET): Description of the endpoint and what it returns.
+  - Request: Describe any request parameters or headers.
+  - Response: Describe the response format and provide example responses.
+
