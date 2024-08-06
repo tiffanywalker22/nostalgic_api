@@ -1,0 +1,6 @@
+What is it your are going to build and how does it fit the theme?
+ We are making a single page website that uses our psql database and api to display popular bedroom themes from growing up in the 90's/early 2000's
+What tools will you use?
+ Psql, python, flask, sphinx, react, bing ai images
+How long do you expect to spend on development of each part?
+ One day for planning, two days for back-end, three days for front-end, one day to wrap up loose ends/documentation
