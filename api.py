@@ -17,6 +17,12 @@ db_config = {
 app = Flask(__name__)
 
 def connect_db():
+    """
+    Connects to the PostgreSQL database using the provided configuration.
+
+    Returns:
+        psycopg2.connection: A connection object to the PostgreSQL database.
+    """
     logger.info('Connecting to the database...')
     conn = psycopg2.connect(**db_config)
     logger.info('Connected to the database.')
@@ -25,6 +31,20 @@ def connect_db():
 
 @app.route('/bedrooms', methods=['GET'])
 def get_bedrooms():
+    """
+    Retrieves a list of all bedrooms from the `bedrooms` table in the PostgreSQL database.
+
+    The function queries the database for all records in the `bedrooms` table and returns them
+    as a JSON array.
+
+    Returns:
+        flask.Response: A Flask `Response` object containing a JSON array of bedroom objects.
+        The JSON array includes:
+            - `bedroom_id` (int): The unique ID of the bedroom.
+            - `title` (str): The title of the bedroom.
+            - `description` (str): A text description of the bedroom.
+            - `img_src` (str): The URL or path to an image of the bedroom.
+    """
     logger.info('Received request for all bedrooms.')
     conn = connect_db()
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -37,5 +57,10 @@ def get_bedrooms():
     return jsonify(bedrooms_list)
 
 if __name__ == '__main__':
+    """
+    Starts the Flask application if the script is executed directly.
+
+    The application runs in debug mode for development purposes.
+    """
     logger.info('Starting Flask application...')
     app.run(debug=True)
