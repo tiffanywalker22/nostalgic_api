@@ -125,6 +125,7 @@ def process_csv(file_path, db_config):
     conn.close()
     logger.info('CSV file processed and data inserted into the database.')
 
-csv_file_path = 'bedrooms.csv'
-create_table()
-process_csv(csv_file_path, db_config)
+if __name__ == "__main__":
+    csv_file_path = 'bedrooms.csv'
+    create_table()
+    process_csv(csv_file_path, db_config)
