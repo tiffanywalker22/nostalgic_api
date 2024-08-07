@@ -1,7 +1,7 @@
 import React from 'react';
 import BedroomList from './components/BedroomList';
 import './App.css';
-import { MouseTrail } from 'retro-react'; 
+import { MouseTrail } from 'retro-react';
 
 const App = () => {
   return (
@@ -11,23 +11,14 @@ const App = () => {
       </header>
       <main>
         <BedroomList />
-        <Container
-          sx={{
-            border: '1px solid black',
-            height: '500px',
-            position: 'relative',
-            width: '500px'
-          }}
-        >
           <MouseTrail
             offset={{
-              x: 0,
-              y: 0
+              x: -750,
+              y: 20
             }}
             particleColor="rainbow"
             particleSize={5}
           />
-        </Container>
       </main>
     </div>
   );
