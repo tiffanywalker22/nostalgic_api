@@ -15,7 +15,6 @@ const BedroomList = () => {
         <div className="bedroom-list-container">
             <div className="row">
                 {bedrooms.map(bedroom => (
-                    <div className="bedroom-card" key={bedroom.id}>
                         <div className="bedroom-card" key={bedroom.id}> {/* Card for each bedroom */}
                             <img
                                 src={`http://localhost:5000/static/${bedroom.img_src}`}
@@ -27,7 +26,6 @@ const BedroomList = () => {
                                 <p>{bedroom.description}</p>
                             </div>
                         </div>
-                    </div>
                 ))}
             </div>
         </div>
