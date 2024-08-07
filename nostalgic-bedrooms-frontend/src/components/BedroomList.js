@@ -16,9 +16,9 @@ const BedroomList = () => {
                 {bedrooms.map(bedroom => (
                     <div className="col-md-4" key={bedroom.id}>
                         <div className="card">
-                            <img src={`http://localhost:5000/static/${bedroom.img_src}`} className="card-img-top" alt={bedroom.name} />
+                            <img src={`http://localhost:5000/static/${bedroom.img_src}`} className="card-img-top" alt={bedroom.title} />
                             <div className="card-body">
-                                <h5 className="card-title">{bedroom.name}</h5>
+                                <h5 className="card-title">{bedroom.title}</h5>
                                 <p className="card-text">{bedroom.description}</p>
                             </div>
                         </div>
