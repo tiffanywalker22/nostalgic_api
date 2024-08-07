@@ -3,9 +3,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: yellow;
   padding: 20px;
-  color: white;
+  color: red;
 }
 
 .bedroom-list {
@@ -19,12 +19,29 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 10px;
-  padding: 20px;
-  width: 300px;
+  width: 80%;
+  max-width: 800px;
   text-align: left;
+  background-color: white;
 }
 
 .bedroom-card img {
-  width: 100%;
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
   border-radius: 10px;
+}
+
+.bedroom-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bedroom-info h2 {
+  color: red;
+}
+
+.bedroom-info p {
+  color: blue;
 }

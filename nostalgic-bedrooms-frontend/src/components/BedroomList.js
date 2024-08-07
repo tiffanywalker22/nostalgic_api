@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getBedrooms } from '../services/api';
+import './BedroomList.css';
 
 const BedroomList = () => {
     const [bedrooms, setBedrooms] = useState([]);
@@ -11,15 +12,19 @@ const BedroomList = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div className="bedroom-list-container">
             <div className="row">
                 {bedrooms.map(bedroom => (
-                    <div className="col-md-4" key={bedroom.id}>
-                        <div className="card">
-                            <img src={`http://localhost:5000/static/${bedroom.img_src}`} className="card-img-top" alt={bedroom.title} />
-                            <div className="card-body">
-                                <h5 className="card-title">{bedroom.title}</h5>
-                                <p className="card-text">{bedroom.description}</p>
+                    <div className="bedroom-card" key={bedroom.id}>
+                        <div className="bedroom-card" key={bedroom.id}> {/* Card for each bedroom */}
+                            <img
+                                src={`http://localhost:5000/static/${bedroom.img_src}`}
+                                lt={bedroom.title}
+                                className="bedroom-img" // Optional: add class for image styling
+                            />
+                            <div className="bedroom-info">
+                                <h5>{bedroom.title}</h5>
+                                <p>{bedroom.description}</p>
                             </div>
                         </div>
                     </div>
