@@ -11,3 +11,5 @@ export const getBedrooms = async () => {
     throw error;
   }
 };
+
+export default getBedrooms;

@@ -15,3 +15,6 @@ class TestAPI(unittest.TestCase):
         conn = api.connect_db()
         mock_connect.assert_called_with(**api.db_config)
         self.assertIsNotNone(conn)
+
+if __name__ == '__main__':
+    unittest.main()
