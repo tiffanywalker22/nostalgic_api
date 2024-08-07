@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import psycopg2
 import psycopg2.extras
 import logging
@@ -15,6 +16,7 @@ db_config = {
 }
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS
 
 def connect_db():
     """
