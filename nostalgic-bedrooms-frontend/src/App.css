@@ -4,9 +4,11 @@
 }
 
 .App-header {
-  background-color: yellow;
-  padding: 20px;
-  color: red;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  font-size: 6rem;
+  background: linear-gradient(to right, #f01a16, #eb57ad, #9069d3, #3621f3, #26dad1, #51eb3d, #eeff41, #f9a825, #ff5722);
 }
 
 .bedroom-list {
