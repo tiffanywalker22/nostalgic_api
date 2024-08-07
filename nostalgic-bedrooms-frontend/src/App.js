@@ -16,24 +16,24 @@ const App = () => {
         particleSize={5}
       />
       <Scrollbar theme="primary">
-  <Container
-    sx={{
-      backgroundColor: 'white',
-      height: '300px',
-      overflowY: 'scroll',
-      padding: '1rem',
-      width: '300px'
-    }}
-  >
-  </Container>
-</Scrollbar>
-      <header className="App-header">
-        <h1>Nostalgic Bedrooms</h1>
-      </header>
-      <main>
-        <BedroomList />
-      </main>
-    </div>
+        <div
+          style={{
+            backgroundColor: 'white',
+            height: '100%',
+            overflowY: 'scroll',
+            padding: '1rem',
+            boxSizing: 'border-box' // includes padding in height calculation
+          }}
+        >
+          <header className="App-header">
+            <h1>Nostalgic Bedrooms</h1>
+          </header>
+          <main>
+            <BedroomList />
+          </main>
+        </div>
+    </Scrollbar>
+  </div>
   );
 };
 
