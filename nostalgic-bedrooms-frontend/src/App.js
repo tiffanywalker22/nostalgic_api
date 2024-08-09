@@ -28,18 +28,14 @@ const App = () => {
             // boxSizing: 'border-box' // includes padding in height calculation
           }}
         >
-          <header>
-            <h1 class="rainbow-letters">
-              <span>N</span>
-              <span>o</span>
-              <span>s</span>
-              <span>t</span>
-              <span>a</span>
-              <span>l</span>
-              <span>g</span>
-              <span>i</span>
-              <span>a</span>
-            </h1>
+          <header className="App-header">
+            <Text
+              align="center"
+              color="rainbow"
+              variant="h1"
+            >
+              <h1>Nostalgic Bedrooms</h1>
+            </Text>
           </header>
           <main>
             <BedroomList />
