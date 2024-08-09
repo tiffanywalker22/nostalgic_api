@@ -1,7 +1,7 @@
 import React from 'react';
 import BedroomList from './components/BedroomList';
 import './App.css';
-import { MouseTrail } from 'retro-react';
+import { Container, MouseTrail } from 'retro-react';
 import { Scrollbar } from 'retro-react';
 
 const App = () => {
@@ -16,13 +16,15 @@ const App = () => {
         particleSize={5}
       />
       <Scrollbar theme="primary">
-        <div
-          style={{
+        <Container
+          fluid
+          sx={{
             backgroundColor: 'white',
-            height: '800px',
+            height: '100vh',
             overflowY: 'scroll',
             padding: '1rem',
-            width: '800px'
+            width: '100vw',
+            boxSizing: 'border-box',
             // boxSizing: 'border-box' // includes padding in height calculation
           }}
         >
@@ -32,7 +34,7 @@ const App = () => {
           <main>
             <BedroomList />
           </main>
-        </div>
+        </Container>
     </Scrollbar>
   </div>
   );
