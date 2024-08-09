@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getBedrooms } from '../services/api';
 import './BedroomList.css';
+import { Container, Divider } from 'retro-react';
 
 const BedroomList = () => {
     const [bedrooms, setBedrooms] = useState([]);
@@ -15,17 +16,21 @@ const BedroomList = () => {
         <div className="bedroom-list-container">
             <div className="row">
                 {bedrooms.map(bedroom => (
-                        <div className="bedroom-card" key={bedroom.id}> {/* Card for each bedroom */}
-                            <img
-                                src={`http://localhost:5000/static/${bedroom.img_src}`}
-                                lt={bedroom.title}
-                                className="bedroom-img" // Optional: add class for image styling
+                    <div className="bedroom-card" key={bedroom.id}> {/* Card for each bedroom */}
+                        <img
+                            src={`http://localhost:5000/static/${bedroom.img_src}`}
+                            lt={bedroom.title}
+                            className="bedroom-img" // Optional: add class for image styling
+                        />
+                        <div className="bedroom-info">
+                            <h5>{bedroom.title}</h5>
+                            <Divider
+                                color="rainbow"
+                                orientation="horizontal"
                             />
-                            <div className="bedroom-info">
-                                <h5>{bedroom.title}</h5>
-                                <p>{bedroom.description}</p>
-                            </div>
+                            <p>{bedroom.description}</p>
                         </div>
+                    </div>
                 ))}
             </div>
         </div>
