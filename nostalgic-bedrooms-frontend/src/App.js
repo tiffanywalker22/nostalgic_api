@@ -1,8 +1,7 @@
 import React from 'react';
 import BedroomList from './components/BedroomList';
 import './App.css';
-import { Container, MouseTrail } from 'retro-react';
-import { Scrollbar } from 'retro-react';
+import { Box, Container, MouseTrail, Text, Scrollbar } from 'retro-react';
 
 const App = () => {
   return (
@@ -19,7 +18,7 @@ const App = () => {
         <Container
           fluid
           sx={{
-            backgroundColor: 'white',
+            // backgroundColor: 'w',
             height: '100vh',
             overflowY: 'scroll',
             padding: '1rem',
@@ -29,13 +28,21 @@ const App = () => {
           }}
         >
           <header className="App-header">
-            <Text
-              align="center"
-              color="rainbow"
-              variant="h1"
+            <Box
+              color="primary"
+              pattern="solid"
+              sx={{
+                width: '100%'
+              }}
             >
-              <h1>Nostalgic Bedrooms</h1>
-            </Text>
+              <Text
+                align="center"
+                color="rainbow"
+                variant="h2"
+              >
+                <h2>Nostalgic Bedrooms</h2>
+              </Text>
+            </Box>
           </header>
           <main>
             <BedroomList />

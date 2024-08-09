@@ -63,6 +63,7 @@ const BedroomList = () => {
                       <Card
                           alt={bedroom.title}
                           color="primary"
+                          pattern="solid"
                           // footer={<Text variant="small">#{bedroom.id}</Text>} // Optional footer, like an ID
                           header={
                           <div>
@@ -74,7 +75,6 @@ const BedroomList = () => {
                           </div>
                           }
                           image={`http://localhost:5000/static/${bedroom.img_src}`}
-                          pattern="noise"
                           sx={{
                               maxHeight: '800px',
                               maxWidth: '500px',
