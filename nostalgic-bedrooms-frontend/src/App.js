@@ -19,10 +19,11 @@ const App = () => {
         <div
           style={{
             backgroundColor: 'white',
-            height: '100%',
+            height: '800px',
             overflowY: 'scroll',
             padding: '1rem',
-            boxSizing: 'border-box' // includes padding in height calculation
+            width: '800px'
+            // boxSizing: 'border-box' // includes padding in height calculation
           }}
         >
           <header className="App-header">
